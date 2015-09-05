@@ -1,0 +1,28 @@
+h1.page-head{
+	margin-left: 550px;
+	color: blue !important;
+}
+h5{
+	color: blue !important;
+}
+.odd {
+	background-color: yellow; 
+}
+.even {
+	background-color: pink;
+}
+.form-list{
+	width: 240px;
+	height: 224px;
+	overflow-y: auto;
+}
+.form-control{
+	width: 230px;
+}
+.ng-scope{
+	margin-top: -2px;
+}
+.btn{
+	width: 200px;
+	font-size: 18px;
+}

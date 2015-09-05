@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head> 
+	<script src="../../Angular-Files/angular-1.4.0-beta.6/angular.min.js"></script>
+	<script src="../../Angular-Files/angular-1.4.0-beta.6/docs/js/angular-bootstrap/bootstrap.min.js"></script>
+	<script src="../../Angular-Files/angular-1.4.0-beta.6/docs/js/angular-bootstrap/dropdown-toggle.min.js"></script>
+	
+	<script src="../js/MyApplication.js"></script>
+	<script src="../js/MyController.js"></script>
+	
+	<link rel="stylesheet" href="../../Angular-Files/angularjs.org-master/src/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../../Angular-Files/angular-1.4.0-beta.6/docs/css/animations.css"/>
+	<link rel="stylesheet" href="../../Angular-Files/angular-1.4.0-beta.6/docs/css/prettify.css"/>
+	<link rel="stylesheet" href="../../Angular-Files/angular-1.4.0-beta.6/docs/css/prettify-theme.css"/>
+	<link rel="stylesheet" href="../../Angular-Files/angular-1.4.0-beta.6/docs/css/doc_widgets.css"/>
+	<link rel="stylesheet" href="../../Angular-Files/angular-1.4.0-beta.6/docs/css/docs.css"/>
+	
+	<link rel="stylesheet" href="../css/MyStyleSheet.css"/>
+	
+</head>
+<body>
+	<div><h1 class="page-head">ng-dropdown</h1></div>
+	<div ng-controller='SetupController'>
+		<p ng-cloak>{{greeting.text}}, World</p>
+		<h5 ng-cloak>Time: {{ clock }}</h5>
+	</div>
+	<br>
+	<div class="form-group" ng-controller="DropDownController">
+		<input class="form-control input-prepend" ng-model="countryName" ng-blur="" type="search" placeholder="Enter The Country">
+		<span ng-cloak ng-hide="filteredType.length">No Result Found!</span>
+		<div class="form-list">
+			<div ng-cloak ng-show="countryName.length" ng-repeat="cName in filteredType = (countryList | filter:countryName)">
+				<span>
+					<a class="btn btn-default" ng-href="" ng-click="selectVal(cName)">{{ cName }}</a>
+					<!-- <a class="btn btn-default" ng-href="" ng-click="removeExp($index)">X</a> -->
+				</span>
+			</div>
+		</div>		
+	</div>
+	<br>
+	<!-- <div ng-controller="PeopleController">
+		<ul>
+			<li ng-cloak ng-repeat="person in people" ng-class="{even: !$even, odd: !$odd}">
+				{{person.name}} lives in {{person.city}}
+			</li>
+		</ul>
+	</div> -->
+</body> 
+</html> 
